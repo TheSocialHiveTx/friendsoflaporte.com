@@ -106,28 +106,64 @@
    4. Custom REST:  fetch('/api/membership', { method: 'POST', body: formData })
 ──────────────────────────────────────────── */
 (function initMembershipForm() {
-  const form    = document.getElementById('membership-form');
+  const form    = document.getElementById('membership-form-el');
   const success = document.getElementById('form-success');
   if (!form) return;
+
+  /* Show/hide parent-guardian section when Junior tier is selected */
+  const juniorRadio   = document.getElementById('tier-radio-junior');
+  const guardianSection = document.getElementById('guardian-section');
+  if (juniorRadio && guardianSection) {
+    document.querySelectorAll('input[name="membership_tier"]').forEach(radio => {
+      radio.addEventListener('change', () => {
+        const isJunior = juniorRadio.checked;
+        guardianSection.style.display = isJunior ? 'block' : 'none';
+      });
+    });
+  }
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const name   = document.getElementById('f-name')?.value.trim()  || '';
-    const email  = document.getElementById('f-email')?.value.trim() || '';
-    const phone  = document.getElementById('f-phone')?.value.trim() || '';
-    const why    = document.getElementById('f-why')?.value.trim()   || '';
+    const name    = document.getElementById('f-name')?.value.trim()  || '';
+    const dob     = document.getElementById('f-dob')?.value.trim()   || '';
+    const email   = document.getElementById('f-email')?.value.trim() || '';
+    const waiver  = document.getElementById('f-waiver')?.checked;
+    const skills  = document.getElementById('f-skills')?.value.trim() || '';
+    const guardian = document.getElementById('f-guardian-name')?.value.trim() || '';
+
+    /* Determine selected tier */
+    const tierEl  = document.querySelector('input[name="membership_tier"]:checked');
+    const tierMap = { standard_50: '$50 Standard', senior_25: '$25 Senior (65+)', junior_15: '$15 Junior (1–17)' };
+    const tier    = tierEl ? (tierMap[tierEl.value] || tierEl.value) : '';
 
     /* Basic validation */
     if (!name || !email) {
       alert('Please fill in your full name and email address.');
       return;
     }
+    if (!tier) {
+      alert('Please select a membership type.');
+      return;
+    }
+    if (!waiver) {
+      alert('Please agree to the FLPAS Liability Waiver to continue.');
+      return;
+    }
 
     /* — STATIC FALLBACK: open mailto — */
-    const subject = encodeURIComponent('Membership Interest — Friends of La Porte Animal Shelter');
+    const subject = encodeURIComponent('FLPAS Membership Application');
     const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nWhy I want to join:\n${why}`
+      `FLPAS Membership Application\n` +
+      `━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n` +
+      `Name:              ${name}\n` +
+      `Date of Birth:     ${dob}\n` +
+      `Email:             ${email}\n` +
+      `Membership Tier:   ${tier}\n` +
+      `Liability Waiver:  ${waiver ? 'Agreed' : 'Not agreed'}\n` +
+      `Skills / Talents:  ${skills || 'N/A'}\n` +
+      (guardian ? `Parent/Guardian:  ${guardian}\n` : ``) +
+      `\nPayment will be arranged upon receipt.`
     );
     window.location.href = `mailto:info@friendsoflaporte.org?subject=${subject}&body=${body}`;
 
