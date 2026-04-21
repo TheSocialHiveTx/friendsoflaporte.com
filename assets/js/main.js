@@ -218,3 +218,30 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 })();
+
+
+/* ────────────────────────────────────────────
+   DONATE MODAL
+──────────────────────────────────────────── */
+(function initDonateModal() {
+  const fab     = document.getElementById('donate-fab');
+  const overlay = document.getElementById('donate-overlay');
+  const closeBtn = document.getElementById('donate-modal-close');
+  if (!fab || !overlay) return;
+
+  const open  = () => overlay.classList.add('open');
+  const close = () => overlay.classList.remove('open');
+
+  fab.addEventListener('click', open);
+  closeBtn && closeBtn.addEventListener('click', close);
+
+  /* Click outside modal card closes it */
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) close();
+  });
+
+  /* Escape key closes it */
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') close();
+  });
+})();
