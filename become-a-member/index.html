@@ -72,7 +72,7 @@
         </p>
         <div class="hero__actions">
           <a href="#membership-form" class="btn btn--primary btn--lg" id="hero-form-btn">
-            ♥ Join Today — It's Free
+            ♥ Join Today — Starting at $15
           </a>
           <a href="../mission/" class="btn btn--outline btn--lg">
             Learn About Our Mission
@@ -131,7 +131,90 @@
     </section>
 
     <!-- ═══════════════════════════════════════
-         MEMBERSHIP INVOLVEMENT
+         MEMBERSHIP TIERS
+    ════════════════════════════════════════ -->
+    <section class="section section--alt" aria-labelledby="tiers-heading">
+      <div class="container">
+        <div class="text-center" style="margin-bottom: var(--space-lg);">
+          <span class="section-label">Membership Options</span>
+          <h2 class="section-heading" id="tiers-heading">Choose Your Membership Level</h2>
+          <p class="section-subheading">
+            Your membership directly supports the animals and people of La Porte. Every dollar stays in our community.
+          </p>
+        </div>
+
+        <div class="tiers-grid">
+
+          <!-- Standard -->
+          <div class="tier-card tier-card--gold fade-in" id="tier-standard">
+            <div class="tier-card__header">
+              <div class="tier-card__badge">🐾</div>
+              <div class="tier-card__name">Standard</div>
+              <div class="tier-card__price">$50 / year</div>
+            </div>
+            <div class="tier-card__body">
+              <ul class="tier-card__features">
+                <li>Full FLPAS membership</li>
+                <li>Access to all member events &amp; activities</li>
+                <li>Voting rights at member meetings</li>
+                <li>Updates &amp; newsletter</li>
+              </ul>
+            </div>
+            <div class="tier-card__footer">
+              <a href="#membership-form" class="tier-card__cta">Select Standard ↓</a>
+            </div>
+          </div>
+
+          <!-- Senior -->
+          <div class="tier-card tier-card--silver fade-in fade-in-delay-1" id="tier-senior">
+            <div class="tier-card__header">
+              <div class="tier-card__badge">🤍</div>
+              <div class="tier-card__name">Senior</div>
+              <div class="tier-card__price">$25 / year · Ages 65+</div>
+            </div>
+            <div class="tier-card__body">
+              <ul class="tier-card__features">
+                <li>Full FLPAS membership</li>
+                <li>Access to all member events &amp; activities</li>
+                <li>Voting rights at member meetings</li>
+                <li>Updates &amp; newsletter</li>
+              </ul>
+            </div>
+            <div class="tier-card__footer">
+              <a href="#membership-form" class="tier-card__cta">Select Senior ↓</a>
+            </div>
+          </div>
+
+          <!-- Junior -->
+          <div class="tier-card tier-card--bronze fade-in fade-in-delay-2" id="tier-junior">
+            <div class="tier-card__header">
+              <div class="tier-card__badge">🐶</div>
+              <div class="tier-card__name">Junior</div>
+              <div class="tier-card__price">$15 / year · Ages 1–17</div>
+            </div>
+            <div class="tier-card__body">
+              <ul class="tier-card__features">
+                <li>Youth FLPAS membership</li>
+                <li>Access to all member events &amp; activities</li>
+                <li>Parent/Guardian signature required</li>
+                <li>Updates &amp; newsletter</li>
+              </ul>
+            </div>
+            <div class="tier-card__footer">
+              <a href="#membership-form" class="tier-card__cta">Select Junior ↓</a>
+            </div>
+          </div>
+
+        </div>
+
+        <p class="tier-coming-soon">
+          Payment accepted by check (made out to FLPAS) or via CashApp / Venmo at 281-515-5505.
+        </p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         WHY MEMBERSHIP MATTERS
     ════════════════════════════════════════ -->
     <section class="section section--alt" aria-labelledby="involvement-heading">
       <div class="container">
@@ -196,7 +279,7 @@
           Ready to Make an Impact?
         </h2>
         <p style="color: rgba(255,255,255,.85); font-size: 1.05rem; max-width: 540px; margin: 0 auto 2rem;">
-          Joining is free. Your interest and commitment are what we value. Fill out the form below and become part of what we're building in La Porte.
+          Memberships start at just $15/year. Choose the tier that fits and fill out the application below — we'll follow up with payment details and next steps.
         </p>
         <a href="#membership-form" class="btn btn--outline btn--lg" id="accent-form-btn">Fill Out the Membership Form ↓</a>
       </div>
@@ -238,82 +321,102 @@
 
         <div class="membership-form-card" role="region" aria-label="Membership interest form">
           <!-- Form -->
-          <form id="membership-form" novalidate aria-label="Membership interest form">
-            <h3 class="membership-form-card__heading">Member Interest Form</h3>
+          <form id="membership-form-el" novalidate aria-label="Membership application form">
+            <h3 class="membership-form-card__heading">FLPAS Membership Application</h3>
             <p class="membership-form-card__sub">
-              Tell us a little about yourself and why you'd like to get involved. Membership is free — we just want to connect with you.
+              Complete the form below. A team member will follow up with payment instructions.
             </p>
 
+            <!-- Name + DOB -->
             <div class="form-row">
               <div class="form-group">
                 <label class="form-label" for="f-name">Full Name <span aria-hidden="true">*</span></label>
-                <input
-                  class="form-control"
-                  type="text"
-                  id="f-name"
-                  name="name"
-                  placeholder="Jane Smith"
-                  required
-                  autocomplete="name"
-                  aria-required="true"
-                />
+                <input class="form-control" type="text" id="f-name" name="name"
+                  placeholder="Jane Smith" required autocomplete="name" aria-required="true" />
               </div>
               <div class="form-group">
-                <label class="form-label" for="f-email">Email Address <span aria-hidden="true">*</span></label>
-                <input
-                  class="form-control"
-                  type="email"
-                  id="f-email"
-                  name="email"
-                  placeholder="jane@example.com"
-                  required
-                  autocomplete="email"
-                  aria-required="true"
-                />
+                <label class="form-label" for="f-dob">Date of Birth <span aria-hidden="true">*</span></label>
+                <input class="form-control" type="date" id="f-dob" name="dob"
+                  required aria-required="true" />
               </div>
             </div>
 
+            <!-- Email -->
             <div class="form-group">
-              <label class="form-label" for="f-phone">Phone Number <span style="color: var(--clr-muted); font-weight: 400;">(optional)</span></label>
-              <input
-                class="form-control"
-                type="tel"
-                id="f-phone"
-                name="phone"
-                placeholder="(281) 555-0100"
-                autocomplete="tel"
-              />
+              <label class="form-label" for="f-email">Email Address <span aria-hidden="true">*</span></label>
+              <input class="form-control" type="email" id="f-email" name="email"
+                placeholder="jane@example.com" required autocomplete="email" aria-required="true" />
             </div>
 
+            <!-- Membership Tier -->
+            <fieldset class="form-group" style="border:none;padding:0;margin:0;">
+              <legend class="form-label" style="margin-bottom:.6rem;">Membership Type <span aria-hidden="true">*</span></legend>
+              <div style="display:flex;flex-direction:column;gap:.5rem;">
+                <label class="form-radio-label" style="display:flex;align-items:center;gap:.6rem;cursor:pointer;">
+                  <input type="radio" name="membership_tier" value="standard_50" id="tier-radio-standard" required />
+                  <span><strong>$50</strong> — Standard Membership</span>
+                </label>
+                <label class="form-radio-label" style="display:flex;align-items:center;gap:.6rem;cursor:pointer;">
+                  <input type="radio" name="membership_tier" value="senior_25" id="tier-radio-senior" />
+                  <span><strong>$25</strong> — Senior Citizen Membership (ages 65+)</span>
+                </label>
+                <label class="form-radio-label" style="display:flex;align-items:center;gap:.6rem;cursor:pointer;">
+                  <input type="radio" name="membership_tier" value="junior_15" id="tier-radio-junior" />
+                  <span><strong>$15</strong> — Junior Membership (ages 1–17)</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <!-- Liability Waiver -->
+            <div class="form-group" style="margin-top:1rem;">
+              <label class="form-radio-label" style="display:flex;align-items:flex-start;gap:.6rem;cursor:pointer;">
+                <input type="checkbox" id="f-waiver" name="waiver" required aria-required="true" style="margin-top:.2rem;flex-shrink:0;" />
+                <span>I have read and agree to the <strong>FLPAS Liability Waiver</strong>. <span aria-hidden="true">*</span></span>
+              </label>
+            </div>
+
+            <!-- Skills / Talents -->
             <div class="form-group">
-              <label class="form-label" for="f-why">Why are you interested in joining? <span aria-hidden="true">*</span></label>
-              <textarea
-                class="form-control"
-                id="f-why"
-                name="why"
-                rows="4"
-                placeholder="Tell us about your connection to the La Porte community, your interest in animal welfare, or what you hope to contribute..."
-                required
-                aria-required="true"
+              <label class="form-label" for="f-skills">
+                Skills or Talents You'd Like to Share with FLPAS
+                <span style="color: var(--clr-muted); font-weight: 400;">(optional)</span>
+              </label>
+              <textarea class="form-control" id="f-skills" name="skills" rows="3"
+                placeholder="e.g. photography, social media, fundraising, carpentry, veterinary knowledge..."
               ></textarea>
             </div>
 
+            <!-- Parent / Guardian (shown when Junior is selected) -->
+            <div id="guardian-section" style="display:none; border-left: 3px solid var(--clr-accent); padding-left: 1rem; margin-top: .5rem;">
+              <p class="form-label" style="margin-bottom:.75rem;">Parent / Guardian (required for members under 18)</p>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="f-guardian-name">Parent / Guardian Name</label>
+                  <input class="form-control" type="text" id="f-guardian-name" name="guardian_name"
+                    placeholder="Parent or Guardian Full Name" autocomplete="name" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Submit -->
             <div class="form-submit">
               <button type="submit" class="btn btn--primary btn--lg" id="form-submit-btn">
-                ♥ Submit My Interest
+                ♥ Submit Application
               </button>
             </div>
 
-            <p class="form-note">
-              By submitting this form, you're expressing interest in becoming a member of Friends of La Porte Animal Shelter, a 501(c)(3) nonprofit organization. Your information will not be shared with third parties.
-            </p>
-
-            <div class="form-mailto">
-              <p style="color: var(--clr-muted); font-size: .82rem;">Prefer to email directly?</p>
-              <a href="mailto:info@friendsoflaporte.org?subject=Membership%20Interest">
-                info@friendsoflaporte.org
-              </a>
+            <div class="form-mailto" style="margin-top:1.25rem; background: var(--clr-bg); border-radius: var(--radius-sm); padding: 1rem;">
+              <p style="font-weight: 600; color: var(--clr-dark); margin-bottom: .4rem;">💳 Payment Methods</p>
+              <p style="font-size: .85rem; color: var(--clr-muted); line-height: 1.6;">
+                Checks made out to <strong>FLPAS</strong> can be mailed to:<br />
+                FLPAS · 5230 Glenpark Dr. · La Porte, TX 775714<br />
+                CashApp or Venmo: <strong>281-515-5505</strong>
+              </p>
             </div>
+
+            <p class="form-note" style="margin-top:1rem;">
+              By submitting, you're applying for membership in Friends of La Porte Animal Shelter (FLPAS), a 501(c)(3) nonprofit. Your information will not be shared with third parties.
+            </p>
           </form>
 
           <!-- Success Message (shown after submit) -->
