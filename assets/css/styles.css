@@ -898,6 +898,107 @@ button, input, select, textarea { font-family: inherit; }
 .why-item__text { font-size: .93rem; color: var(--clr-muted); line-height: 1.6; }
 .why-item__text strong { color: var(--clr-dark); display: block; margin-bottom: .1rem; }
 
+/* ── Membership Tiers ── */
+.tiers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.75rem;
+  align-items: stretch;
+}
+.tier-card {
+  background: var(--clr-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.tier-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+.tier-card__header {
+  padding: 1.75rem 1.5rem 1.25rem;
+  text-align: center;
+}
+.tier-card--bronze .tier-card__header { background: linear-gradient(135deg, #8B5E3C, #c8843a); }
+.tier-card--silver .tier-card__header { background: linear-gradient(135deg, #5a6a7a, #8fa3b1); }
+.tier-card--gold   .tier-card__header { background: linear-gradient(135deg, #b8860b, #f0c040); }
+.tier-card__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  font-size: 1.5rem;
+  margin-bottom: .6rem;
+}
+.tier-card__name {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--clr-white);
+  letter-spacing: .02em;
+  margin-bottom: .25rem;
+}
+.tier-card__price {
+  font-size: 1rem;
+  color: rgba(255,255,255,.80);
+  font-weight: 500;
+}
+.tier-card__body {
+  padding: 1.5rem;
+  flex: 1;
+}
+.tier-card__features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
+.tier-card__features li {
+  display: flex;
+  align-items: flex-start;
+  gap: .5rem;
+  font-size: .9rem;
+  color: var(--clr-muted);
+  line-height: 1.5;
+}
+.tier-card__features li::before {
+  content: '✓';
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: .05rem;
+}
+.tier-card--bronze .tier-card__features li::before { color: #c8843a; }
+.tier-card--silver .tier-card__features li::before { color: #8fa3b1; }
+.tier-card--gold   .tier-card__features li::before { color: #d4a017; }
+.tier-card__footer {
+  padding: 1.25rem 1.5rem;
+  border-top: 1px solid var(--clr-border);
+  text-align: center;
+}
+.tier-card__cta {
+  display: block;
+  width: 100%;
+  padding: .7rem;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: .9rem;
+  text-align: center;
+  transition: background var(--transition), transform var(--transition);
+  cursor: pointer;
+}
+.tier-card--bronze .tier-card__cta { background: #c8843a; color: #fff; }
+.tier-card--bronze .tier-card__cta:hover { background: #8B5E3C; transform: translateY(-2px); }
+.tier-card--silver .tier-card__cta { background: #8fa3b1; color: #fff; }
+.tier-card--silver .tier-card__cta:hover { background: #5a6a7a; transform: translateY(-2px); }
+.tier-card--gold   .tier-card__cta { background: #d4a017; color: #fff; }
+.tier-card--gold   .tier-card__cta:hover { background: #b8860b; transform: translateY(-2px); }
+.tier-coming-soon {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: .88rem;
+  color: var(--clr-muted);
+  font-style: italic;
+}
+
 /* ============================================================
    EVENTS PAGE SPECIFIC
    ============================================================ */
