@@ -1251,7 +1251,8 @@ textarea.form-control { resize: vertical; min-height: 110px; }
   .membership-form-card { padding: 2rem 1.5rem; }
   .cta-band__actions { flex-direction: column; }
   .cta-band__actions .btn { width: 100%; justify-content: center; }
-  .sticky-cta { bottom: 1rem; right: 1rem; }
+  .sticky-cta { bottom: 1rem; left: 1rem; right: auto; z-index: 900; }
+  .sticky-cta .btn { font-size: .8rem; padding: .65rem 1rem; }
 }
 
 @media (max-width: 480px) {
