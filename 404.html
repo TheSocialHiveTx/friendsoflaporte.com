@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Not Found | Friends of La Porte Animal Shelter</title>
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <style>
+    .not-found-section {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem 1.25rem;
+    }
+    .not-found-section__icon {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+    }
+    .not-found-section__code {
+      font-size: 6rem;
+      font-weight: 900;
+      color: var(--clr-primary);
+      line-height: 1;
+      margin-bottom: .5rem;
+      font-family: var(--font-display);
+    }
+    .not-found-section__heading {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--clr-dark);
+      margin-bottom: .75rem;
+    }
+    .not-found-section__text {
+      color: var(--clr-muted);
+      max-width: 420px;
+      margin: 0 auto 2rem;
+      line-height: 1.7;
+    }
+    .not-found-section__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body class="page-body">
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="/home/" class="nav-brand">
+        <div class="nav-brand__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4.5 6.375a4.125 4.125 0 1 1 8.25 0 4.125 4.125 0 0 1-8.25 0ZM14.25 8.625a3.375 3.375 0 1 1 6.75 0 3.375 3.375 0 0 1-6.75 0ZM1.5 19.125a7.125 7.125 0 0 1 14.25 0v.003l-.001.119a.75.75 0 0 1-.363.63 13.067 13.067 0 0 1-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 0 1-.364-.63l-.001-.122ZM17.25 19.128l-.001.144a2.25 2.25 0 0 1-.233.96 10.088 10.088 0 0 0 5.06-1.01.75.75 0 0 0 .42-.643 4.875 4.875 0 0 0-6.957-4.611 8.586 8.586 0 0 1 1.71 5.157v.003Z"/></svg>
+        </div>
+        <div class="nav-brand__text">
+          <span class="nav-brand__name">Friends of La Porte</span>
+          <span class="nav-brand__sub">Animal Shelter</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/home/">Home</a></li>
+        <li><a href="/mission/">Mission</a></li>
+        <li><a href="/events/">Events</a></li>
+        <li><a href="/become-a-member/" class="btn--member">Become a Member</a></li>
+      </ul>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="nav-mobile-menu" id="nav-mobile-menu" role="menu" aria-hidden="true">
+    <a href="/home/">Home</a>
+    <a href="/mission/">Mission</a>
+    <a href="/events/">Events</a>
+    <a href="/become-a-member/" class="btn--member">♥ Become a Member</a>
+  </div>
+
+  <main id="main-content">
+    <div class="not-found-section">
+      <div>
+        <div class="not-found-section__icon" aria-hidden="true">🐾</div>
+        <div class="not-found-section__code" aria-label="Error 404">404</div>
+        <h1 class="not-found-section__heading">Oops — Page Not Found</h1>
+        <p class="not-found-section__text">
+          Looks like this page wandered off. Let's get you back to the right place so you can help support the La Porte Animal Shelter.
+        </p>
+        <div class="not-found-section__actions">
+          <a href="/home/" class="btn btn--blue">Back to Home</a>
+          <a href="/become-a-member/" class="btn btn--primary">♥ Become a Member</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
