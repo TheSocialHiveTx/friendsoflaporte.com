@@ -1183,6 +1183,8 @@ button, input, select, textarea { font-family: inherit; }
 .form-label span { color: var(--clr-accent); }
 .form-control {
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
   padding: .7rem 1rem;
   border: 2px solid var(--clr-border);
   border-radius: var(--radius-sm);
