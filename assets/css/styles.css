@@ -380,7 +380,7 @@ button, input, select, textarea { font-family: inherit; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 25%; /* Keeps raccoon horizontally centered and slightly focused near the top/face */
+  object-position: 25% 75%; /* Shifted right (25%) and up (75%) per user request to center the face */
   z-index: 0;
 }
 .hero-bg-overlay {
