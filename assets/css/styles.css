@@ -366,11 +366,11 @@ button, input, select, textarea { font-family: inherit; }
    ============================================================ */
 .hero {
   position: relative;
-  min-height: 92vh;
+  min-height: 75vh; /* Lowered from 92vh to prevent aggressive zooming */
   display: flex;
   align-items: center;
   overflow: hidden;
-  background: linear-gradient(135deg, #0f1923 0%, #1a3a5c 55%, #1a6faf 100%);
+  background: #0f1923;
 }
 
 /* Hero Carousel Crossfade */
@@ -378,15 +378,14 @@ button, input, select, textarea { font-family: inherit; }
   position: absolute;
   inset: 0;
   z-index: 0;
-  /* Dark background so contained images blend in nicely */
-  background: #0f1923;
 }
 .hero-carousel__slide {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover; /* Fit to edges with no black space */
+  object-position: center;
   opacity: 0;
   animation: heroFade 24s infinite;
 }
