@@ -380,7 +380,7 @@ button, input, select, textarea { font-family: inherit; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center; /* Centered exactly as in the provided screenshot */
+  object-position: 50% 15%; /* Moves the image contents DOWN so the higher parts of the photo become visible */
   z-index: 0;
 }
 .hero-bg-overlay {
