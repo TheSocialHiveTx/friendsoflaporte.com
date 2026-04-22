@@ -380,7 +380,7 @@ button, input, select, textarea { font-family: inherit; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 25% 75%; /* Shifted right (25%) and up (75%) per user request to center the face */
+  object-position: 70% 5%; /* Aligns top-right of the image to be fully visible */
   z-index: 0;
 }
 .hero-bg-overlay {
