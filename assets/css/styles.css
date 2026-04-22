@@ -380,7 +380,7 @@ button, input, select, textarea { font-family: inherit; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 80%; /* Shifted UP so the face clears the text block on desktop */
+  object-position: center;
   z-index: 0;
 }
 .hero-bg-overlay {
