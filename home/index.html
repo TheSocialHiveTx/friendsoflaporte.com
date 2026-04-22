@@ -58,6 +58,13 @@
   ════════════════════════════════════════ -->
   <main id="main-content">
     <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-carousel" aria-hidden="true">
+        <img src="../animalpics/044277b2-7111-4662-9495-af9b976307da.jpg" class="hero-carousel__slide" alt="">
+        <img src="../animalpics/b4cd26f9-3a67-406a-b7f6-7e09e8493b8a.jpg" class="hero-carousel__slide" alt="">
+        <img src="../animalpics/fa2bfb44-4f1f-4d7f-895f-97ef360a962d.jpg" class="hero-carousel__slide" alt="">
+        <img src="../animalpics/0428d674-64d3-4953-bf82-a4bc4f382a51.jpg" class="hero-carousel__slide" alt="">
+        <div class="hero-carousel__overlay"></div>
+      </div>
       <div class="hero__blob hero__blob--1" aria-hidden="true"></div>
       <div class="hero__blob hero__blob--2" aria-hidden="true"></div>
       <div class="container hero__content">
@@ -125,8 +132,12 @@
     <!-- ═══════════════════════════════════════
          COMMUNITY IMPACT — 4 PILLARS
     ════════════════════════════════════════ -->
-    <section class="section" aria-labelledby="impact-heading">
-      <div class="container">
+    <section class="section" aria-labelledby="impact-heading" style="position: relative; overflow: visible;">
+      <!-- Floating Accent Photos -->
+      <div class="floating-accent floating-accent--1"><img src="../animalpics/0856b5f0-edf8-4bdc-920b-fd3c5296afb1.jpg" alt="Shelter animal" loading="lazy"></div>
+      <div class="floating-accent floating-accent--2"><img src="../animalpics/251a27e0-39ac-485e-8184-e9cfbf70645c.jpg" alt="Shelter animal" loading="lazy"></div>
+      <div class="floating-accent floating-accent--3"><img src="../animalpics/fa2bfb44-4f1f-4d7f-895f-97ef360a962d.jpg" alt="Shelter animal" loading="lazy"></div>
+      <div class="container" style="position: relative; z-index: 10;">
         <div class="text-center">
           <span class="section-label">Our Focus Areas</span>
           <h2 class="section-heading" id="impact-heading">Four Ways We Support the Shelter</h2>
@@ -271,6 +282,14 @@
         </div>
       </div>
     </section>
+
+    <!-- ═══════════════════════════════════════
+         MAP STRIP
+    ════════════════════════════════════════ -->
+    <section class="map-embed" aria-label="Location Map">
+      <iframe src="https://maps.google.com/maps?q=La+Porte,+TX&t=&z=12&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of La Porte, Texas"></iframe>
+    </section>
+
   </main>
 
   <!-- ═══════════════════════════════════════
