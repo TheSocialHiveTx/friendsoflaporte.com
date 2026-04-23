@@ -151,25 +151,39 @@
       return;
     }
 
-    /* — STATIC FALLBACK: open mailto — */
-    const subject = encodeURIComponent('FLPAS Membership Application');
-    const body = encodeURIComponent(
-      `FLPAS Membership Application\n` +
-      `━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n` +
-      `Name:              ${name}\n` +
-      `Date of Birth:     ${dob}\n` +
-      `Email:             ${email}\n` +
-      `Membership Tier:   ${tier}\n` +
-      `Liability Waiver:  ${waiver ? 'Agreed' : 'Not agreed'}\n` +
-      `Skills / Talents:  ${skills || 'N/A'}\n` +
-      (guardian ? `Parent/Guardian:  ${guardian}\n` : ``) +
-      `\nPayment will be arranged upon receipt.`
-    );
-    window.location.href = `mailto:info@friendsoflaporte.org?subject=${subject}&body=${body}`;
+    /* Formspree AJAX Submission */
+    const submitBtn = document.getElementById('form-submit-btn');
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML = 'Sending...';
+    submitBtn.disabled = true;
 
-    /* Show success state */
-    form.style.display = 'none';
-    if (success) success.style.display = 'block';
+    const formData = new FormData(form);
+
+    fetch('https://formspree.io/f/mnjllalv', {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        form.style.display = 'none';
+        if (success) success.style.display = 'block';
+      } else {
+        response.json().then(data => {
+          if (Object.hasOwn(data, 'errors')) {
+            alert(data["errors"].map(error => error["message"]).join(", "));
+          } else {
+            alert("Oops! There was a problem submitting your form.");
+          }
+        })
+      }
+    }).catch(error => {
+      alert("Oops! There was a problem submitting your form.");
+    }).finally(() => {
+      submitBtn.innerHTML = originalText;
+      submitBtn.disabled = false;
+    });
   });
 })();
 

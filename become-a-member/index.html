@@ -307,24 +307,6 @@
 
     <!-- ═══════════════════════════════════════
          MEMBERSHIP FORM
-         ─────────────────────────────────────
-         NOTE: This form uses a static mailto
-         fallback. To enable backend submission:
-         
-         Option A — Formspree:
-           Add method="POST" action="https://formspree.io/f/YOUR_FORM_ID"
-           Remove the JS submit handler in main.js
-         
-         Option B — Netlify Forms:
-           Add netlify attribute to <form>
-           Add name="membership" attribute
-         
-         Option C — Google Forms:
-           Replace form with embedded Google Form iframe
-
-         Option D — Custom REST API:
-           Replace mailto href in main.js initMembershipForm()
-           with a fetch() POST request to your endpoint
     ════════════════════════════════════════ -->
     <section class="membership-form-section" id="membership-form" aria-labelledby="form-section-heading">
       <div class="container">
