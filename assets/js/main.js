@@ -259,3 +259,77 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     if (e.key === 'Escape') close();
   });
 })();
+
+/* ────────────────────────────────────────────
+   TEAM MODAL (our-team page)
+──────────────────────────────────────────── */
+(function initTeamModal() {
+  const cards = document.querySelectorAll('.team-card');
+  const overlay = document.getElementById('team-modal-overlay');
+  const closeBtn = document.getElementById('team-modal-close');
+  
+  if (!overlay || cards.length === 0) return;
+
+  const modalImg = document.getElementById('team-modal-img');
+  const modalName = document.getElementById('team-modal-name');
+  const modalRole = document.getElementById('team-modal-role');
+  const modalBio = document.getElementById('team-modal-bio');
+  const teamData = document.getElementById('team-data');
+
+  const openModal = (card) => {
+    const memberId = card.getAttribute('data-member');
+    const name = card.querySelector('.team-card__name').textContent;
+    const role = card.querySelector('.team-card__role').textContent;
+    const imgSrc = card.querySelector('.team-card__img').getAttribute('src');
+    
+    // Find bio content
+    const bioContent = teamData.querySelector(`[data-member-id="${memberId}"]`);
+    
+    if (bioContent) {
+      modalBio.innerHTML = bioContent.innerHTML;
+    } else {
+      modalBio.innerHTML = '';
+    }
+
+    modalImg.src = imgSrc;
+    modalImg.alt = name;
+    modalName.textContent = name;
+    modalRole.textContent = role;
+
+    overlay.classList.add('active');
+    overlay.setAttribute('aria-hidden', 'false');
+    closeBtn.focus();
+    
+    // Prevent background scrolling
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeModal = () => {
+    overlay.classList.remove('active');
+    overlay.setAttribute('aria-hidden', 'true');
+    // Restore scrolling
+    document.body.style.overflow = '';
+  };
+
+  cards.forEach(card => {
+    card.addEventListener('click', () => openModal(card));
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openModal(card);
+      }
+    });
+  });
+
+  closeBtn.addEventListener('click', closeModal);
+  
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) closeModal();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && overlay.classList.contains('active')) {
+      closeModal();
+    }
+  });
+})();
