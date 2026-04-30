@@ -358,3 +358,47 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
   fadeElements.forEach(el => observer.observe(el));
 })();
+
+/** ═══════════════════════════════════════
+ *  PROMO MODAL (HOMEPAGE)
+ *  ════════════════════════════════════════ */
+(function initPromoModal() {
+  const promoOverlay = document.getElementById('promo-modal');
+  if (!promoOverlay) return;
+
+  const closeBtn = promoOverlay.querySelector('.promo-modal__close');
+  
+  const closePromo = () => {
+    promoOverlay.classList.remove('active');
+    promoOverlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  };
+
+  const openPromo = () => {
+    promoOverlay.classList.add('active');
+    promoOverlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    if (closeBtn) closeBtn.focus();
+  };
+
+  // Check if user has already seen the promo in this session
+  if (!sessionStorage.getItem('paintYourPetPromoSeen')) {
+    // Show promo after a slight delay for better UX
+    setTimeout(() => {
+      openPromo();
+      sessionStorage.setItem('paintYourPetPromoSeen', 'true');
+    }, 800);
+  }
+
+  if (closeBtn) closeBtn.addEventListener('click', closePromo);
+  
+  promoOverlay.addEventListener('click', (e) => {
+    if (e.target === promoOverlay) closePromo();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && promoOverlay.classList.contains('active')) {
+      closePromo();
+    }
+  });
+})();
