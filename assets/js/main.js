@@ -402,3 +402,49 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 })();
+
+/** ═══════════════════════════════════════
+ *  T-SHIRT PROMO MODAL (BECOME A MEMBER)
+ *  ════════════════════════════════════════ */
+(function initTshirtModal() {
+  const tshirtOverlay = document.getElementById('tshirt-modal');
+  if (!tshirtOverlay) return;
+
+  const closeBtn = tshirtOverlay.querySelector('.promo-modal__close');
+  const joinBtn = document.getElementById('tshirt-modal-join');
+  
+  const closeTshirt = () => {
+    tshirtOverlay.classList.remove('active');
+    tshirtOverlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  };
+
+  const openTshirt = () => {
+    tshirtOverlay.classList.add('active');
+    tshirtOverlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    if (closeBtn) closeBtn.focus();
+  };
+
+  // Check if user has already seen the promo in this session
+  if (!sessionStorage.getItem('tshirtPromoSeen')) {
+    // Show promo after a slight delay for better UX
+    setTimeout(() => {
+      openTshirt();
+      sessionStorage.setItem('tshirtPromoSeen', 'true');
+    }, 800);
+  }
+
+  if (closeBtn) closeBtn.addEventListener('click', closeTshirt);
+  if (joinBtn) joinBtn.addEventListener('click', closeTshirt);
+  
+  tshirtOverlay.addEventListener('click', (e) => {
+    if (e.target === tshirtOverlay) closeTshirt();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && tshirtOverlay.classList.contains('active')) {
+      closeTshirt();
+    }
+  });
+})();

@@ -379,6 +379,19 @@
               </label>
             </div>
 
+            <!-- T-Shirt Size -->
+            <div class="form-group" style="margin-top:1rem;">
+              <label class="form-label" for="f-shirtsize">T-Shirt Size <span aria-hidden="true">*</span></label>
+              <select class="form-control" id="f-shirtsize" name="shirtsize" required aria-required="true">
+                <option value="" disabled selected>Select a size...</option>
+                <option value="Small">Small</option>
+                <option value="Medium">Medium</option>
+                <option value="Large">Large</option>
+                <option value="X-Large">X-Large</option>
+                <option value="XX-Large">XX-Large</option>
+              </select>
+            </div>
+
             <!-- Skills / Talents -->
             <div class="form-group">
               <label class="form-label" for="f-skills">
@@ -553,6 +566,31 @@
       </div>
     </div>
   </footer>
+
+  <!-- ═══════════════════════════════════════
+       T-SHIRT PROMO MODAL
+  ════════════════════════════════════════ -->
+  <div class="promo-modal-overlay" id="tshirt-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="tshirt-heading">
+    <div class="promo-modal" style="max-width: 600px;">
+      <button class="promo-modal__close" aria-label="Close modal">&times;</button>
+      <div class="promo-modal__content" style="flex-direction: column;">
+        <div style="display: flex; gap: 1rem; padding: 2rem 2rem 0; justify-content: center;">
+          <img src="../promotionalpics/1.png" alt="Free T-Shirt Front" style="width: 45%; border-radius: var(--radius-sm); box-shadow: var(--shadow-sm);" />
+          <img src="../promotionalpics/2.png" alt="Free T-Shirt Back" style="width: 45%; border-radius: var(--radius-sm); box-shadow: var(--shadow-sm);" />
+        </div>
+        <div class="promo-modal__text-col" style="text-align: center; padding-top: 1.5rem;">
+          <span class="event-full-card__type-badge" style="background: var(--clr-accent); color: var(--clr-white); margin-bottom: 1rem; display: inline-block;">🎁 Limited Time Offer</span>
+          <h2 class="promo-modal__heading" id="tshirt-heading" style="font-size: 1.8rem;">First 50 Members Get a Free T-Shirt!</h2>
+          <p class="promo-modal__desc" style="margin-bottom: 1.5rem;">
+            Join today and be one of the first 50 members to receive our exclusive Friends of La Porte Animal Shelter T-shirt for free! It's our way of saying thank you for your support.
+          </p>
+          <div class="promo-modal__actions">
+            <a href="#membership-form" class="btn btn--primary" id="tshirt-modal-join" style="width: 100%; justify-content: center;">Claim Yours Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- ═══════════════════════════════════════
        DONATE FAB + MODAL
