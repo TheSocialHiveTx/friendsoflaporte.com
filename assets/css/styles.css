@@ -1412,12 +1412,6 @@ textarea.form-control { resize: vertical; min-height: 110px; }
   transform: translateY(-2px);
   filter: brightness(1.07);
 }
-.donate-modal__btn--cashapp {
-  background: #00d54b;
-  color: #fff;
-  box-shadow: 0 4px 16px rgba(0,213,75,.35);
-}
-.donate-modal__btn--cashapp:hover { box-shadow: 0 6px 22px rgba(0,213,75,.55); }
 .donate-modal__btn--venmo {
   background: #3d95ce;
   color: #fff;
