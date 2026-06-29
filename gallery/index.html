@@ -28,7 +28,7 @@
   <nav class="site-nav" role="navigation" aria-label="Main navigation">
     <div class="container nav-inner">
       <a href="../home/" class="nav-brand" aria-label="Friends of La Porte Animal Shelter — Home">
-        <img src="../images/friendsoflaporteheaderlogo.png" alt="Friends of La Porte Animal Shelter" class="nav-brand__logo-img" />
+        <span class="nav-brand__text">Friends of La Porte Animal Shelter</span>
       </a>
 
       <ul class="nav-links" role="list">
@@ -57,10 +57,8 @@
 
   <main id="main-content">
     <header class="page-hero" aria-labelledby="gallery-page-heading">
-      <img src="../images/895c46e4-b38a-401c-9408-7b30da02eddf.jpg" class="hero-bg" alt="Shelter animal" aria-hidden="true">
       <div class="hero-bg-overlay"></div>
       <div class="container page-hero__content fade-in">
-        <img src="../images/Friendsoflaportelogo.png" alt="" class="logo-round" aria-hidden="true" style="width:90px;height:90px;margin-bottom:1rem;" />
         <span class="page-hero__label">Gallery</span>
         <h1 class="page-hero__heading" id="gallery-page-heading">Photos from Our Events</h1>
         <p class="page-hero__sub">
@@ -69,52 +67,37 @@
       </div>
     </header>
 
-    <section class="section" aria-labelledby="gallery-intro-heading" style="position: relative; overflow: visible;">
-      <div class="floating-accent floating-accent--1"><img src="../animalpics/0428d674-64d3-4953-bf82-a4bc4f382a51.jpg" alt="Shelter animal" loading="lazy"></div>
-      <div class="floating-accent floating-accent--2"><img src="../animalpics/07843613-0812-40e6-94d7-0b1098260d56.jpg" alt="Shelter animal" loading="lazy"></div>
-      <div class="floating-accent floating-accent--3"><img src="../animalpics/b4cd26f9-3a67-406a-b7f6-7e09e8493b8a.jpg" alt="Shelter animal" loading="lazy"></div>
-      <div class="container--narrow text-center" style="position: relative; z-index: 10;">
-        <span class="section-label">Event Highlights</span>
-        <h2 class="section-heading" id="gallery-intro-heading">A Place for Community Moments</h2>
-        <p style="color: var(--clr-muted); font-size: 1.05rem; line-height: 1.85;">
-          Add photos here whenever you want to showcase the people, pets, and support behind each event.
-        </p>
-      </div>
-    </section>
-
-    <section class="section section--alt" aria-labelledby="gallery-grid-heading">
+    <section class="section section--alt">
       <div class="container">
-        <div class="text-center" style="margin-bottom: var(--space-lg);">
-          <span class="section-label">Photo Gallery</span>
-          <h2 class="section-heading" id="gallery-grid-heading">Event Photos</h2>
-          <p class="section-subheading">
-            A simple space to feature event images and highlight the impact of every gathering.
-          </p>
-        </div>
-
-        <div class="masonry-grid fade-in">
-          <div class="masonry-item"><img src="../eventpictures/cd4c525d-beb2-426f-ab8a-8dd6659a5383.jpg" alt="Shelter supply drive flyer" loading="lazy"></div>
-          <div class="masonry-item tall"><img src="../eventpictures/802A21EE-C607-413C-AC23-73D8B1A6DC18.jpeg" alt="Community event photo" loading="lazy"></div>
-          <div class="masonry-item wide"><img src="../eventpictures/ChatGPT%20Image%20May%2021,%202026,%2009_04_46%20AM.png" alt="Spirit day event flyer" loading="lazy"></div>
-          <div class="masonry-item"><img src="../eventpictures/morgans%20landing.png" alt="Morgan's Landing market event" loading="lazy"></div>
-          <div class="masonry-item"><img src="../animalpics/044277b2-7111-4662-9495-af9b976307da.jpg" alt="Shelter animal portrait" loading="lazy"></div>
-          <div class="masonry-item wide"><img src="../animalpics/25a04dc8-7cd1-4961-a577-4b01df81384d.jpg" alt="Shelter animal in care" loading="lazy"></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta-band" aria-labelledby="gallery-cta-heading">
-      <div class="container">
-        <div class="cta-band__inner text-center">
-          <span class="section-label" style="color: rgba(255,255,255,.70);">Share the Moments</span>
-          <h2 class="cta-band__heading" id="gallery-cta-heading">Add More Photos Anytime</h2>
-          <p class="cta-band__text" style="margin-inline: auto;">
-            Use this page to showcase future events, volunteer days, fundraisers, and the people helping the shelter every step of the way.
-          </p>
-          <div class="cta-band__actions" style="justify-content: center;">
-            <a href="../become-a-member/" class="btn btn--primary btn--lg">♥ Become a Member</a>
-            <a href="../events/" class="btn btn--outline btn--lg">Back to Events</a>
-          </div>
+        <div class="full-gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 2rem; padding: 2rem 0;">
+          <!-- Event Gallery Images -->
+          <div style="width: 100%; aspect-ratio: auto;"><img src="../eventsgallery/dd2.jpg" alt="Event photo" style="width: 100%; height: auto; object-fit: cover; border-radius: var(--radius-lg);" loading="lazy"></div>
+          <div style="width: 100%; aspect-ratio: auto;"><img src="../eventsgallery/dd4.jpg" alt="Event photo" style="width: 100%; height: auto; object-fit: cover; border-radius: var(--radius-lg);" loading="lazy"></div>
+          <div style="width: 100%; aspect-ratio: auto;"><img src="../eventsgallery/donationdrive.jpg" alt="Event photo" style="width: 100%; height: auto; object-fit: cover; border-radius: var(--radius-lg);" loading="lazy"></div>
+          <div style="width: 100%; aspect-ratio: auto;"><img src="../eventsgallery/unnamed.jpg" alt="Event photo" style="width: 100%; height: auto; object-fit: cover; border-radius: var(--radius-lg);" loading="lazy"></div>
+          <div style="width: 100%; aspect-ratio: auto;"><img src="../eventsgallery/unnamed%20(1).jpg" alt="Event photo" style="width: 100%; height: auto; object-fit: cover; border-radius: var(--radius-lg);" loading="lazy"></div>
+          <div style="width: 100%; aspect-ratio: auto;"><img src="../eventsgallery/unnamed%20(2).jpg" alt="Event photo" style="width: 100%; height: auto; object-fit: cover; border-radius: var(--radius-lg);" loading="lazy"></div>
+          <div style="width: 100%; aspect-ratio: auto;"><img src="../eventsgallery/unnamed%20(3).jpg" alt="Event photo" style="width: 100%; height: auto; object-fit: cover; border-radius: var(--radius-lg);" loading="lazy"></div>
+          <div style="width: 100%; aspect-ratio: auto;"><img src="../eventsgallery/unnamed%20(4).jpg" alt="Event photo" style="width: 100%; height: auto; object-fit: cover; border-radius: var(--radius-lg);" loading="lazy"></div>
+          
+          <!-- Animal Pictures -->
+          <div style="width: 100%; aspect-ratio: auto;"><img src="../animalpics/0351ce85-b343-448e-af87-cfab13ef19d1.jpg" alt="Shelter animal" style="width: 100%; height: auto; object-fit: cover; border-radius: var(--radius-lg);" loading="lazy"></div>
+          <div style="width: 100%; aspect-ratio: auto;"><img src="../animalpics/0428d674-64d3-4953-bf82-a4bc4f382a51.jpg" alt="Shelter animal" style="width: 100%; height: auto; object-fit: cover; border-radius: var(--radius-lg);" loading="lazy"></div>
+          <div style="width: 100%; aspect-ratio: auto;"><img src="../animalpics/044277b2-7111-4662-9495-af9b976307da.jpg" alt="Shelter animal" style="width: 100%; height: auto; object-fit: cover; border-radius: var(--radius-lg);" loading="lazy"></div>
+          <div style="width: 100%; aspect-ratio: auto;"><img src="../animalpics/07719e80-d40f-4b36-b326-6b01e0977c5b.jpg" alt="Shelter animal" style="width: 100%; height: auto; object-fit: cover; border-radius: var(--radius-lg);" loading="lazy"></div>
+          <div style="width: 100%; aspect-ratio: auto;"><img src="../animalpics/07843613-0812-40e6-94d7-0b1098260d56.jpg" alt="Shelter animal" style="width: 100%; height: auto; object-fit: cover; border-radius: var(--radius-lg);" loading="lazy"></div>
+          <div style="width: 100%; aspect-ratio: auto;"><img src="../animalpics/0856b5f0-edf8-4bdc-920b-fd3c5296afb1.jpg" alt="Shelter animal" style="width: 100%; height: auto; object-fit: cover; border-radius: var(--radius-lg);" loading="lazy"></div>
+          <div style="width: 100%; aspect-ratio: auto;"><img src="../animalpics/251a27e0-39ac-485e-8184-e9cfbf70645c.jpg" alt="Shelter animal" style="width: 100%; height: auto; object-fit: cover; border-radius: var(--radius-lg);" loading="lazy"></div>
+          <div style="width: 100%; aspect-ratio: auto;"><img src="../animalpics/25a04dc8-7cd1-4961-a577-4b01df81384d.jpg" alt="Shelter animal" style="width: 100%; height: auto; object-fit: cover; border-radius: var(--radius-lg);" loading="lazy"></div>
+          <div style="width: 100%; aspect-ratio: auto;"><img src="../animalpics/742dc1bf-cd98-4f05-8be5-d59a1c9442e8.jpg" alt="Shelter animal" style="width: 100%; height: auto; object-fit: cover; border-radius: var(--radius-lg);" loading="lazy"></div>
+          <div style="width: 100%; aspect-ratio: auto;"><img src="../animalpics/79140d61-88c7-4ccc-b5b1-9caba2708cd4.jpg" alt="Shelter animal" style="width: 100%; height: auto; object-fit: cover; border-radius: var(--radius-lg);" loading="lazy"></div>
+          <div style="width: 100%; aspect-ratio: auto;"><img src="../animalpics/9b67e7b0-9990-4597-9332-c8d01efed1d0.jpg" alt="Shelter animal" style="width: 100%; height: auto; object-fit: cover; border-radius: var(--radius-lg);" loading="lazy"></div>
+          <div style="width: 100%; aspect-ratio: auto;"><img src="../animalpics/b4cd26f9-3a67-406a-b7f6-7e09e8493b8a.jpg" alt="Shelter animal" style="width: 100%; height: auto; object-fit: cover; border-radius: var(--radius-lg);" loading="lazy"></div>
+          <div style="width: 100%; aspect-ratio: auto;"><img src="../animalpics/b949ed86-500b-42a5-90c2-b34277f20ce7.jpg" alt="Shelter animal" style="width: 100%; height: auto; object-fit: cover; border-radius: var(--radius-lg);" loading="lazy"></div>
+          <div style="width: 100%; aspect-ratio: auto;"><img src="../animalpics/dd896846-2ec7-4c14-895a-832cc8fe73b5.jpg" alt="Shelter animal" style="width: 100%; height: auto; object-fit: cover; border-radius: var(--radius-lg);" loading="lazy"></div>
+          <div style="width: 100%; aspect-ratio: auto;"><img src="../animalpics/dee78670-5c73-439d-ad44-60c330d6be3c.jpg" alt="Shelter animal" style="width: 100%; height: auto; object-fit: cover; border-radius: var(--radius-lg);" loading="lazy"></div>
+          <div style="width: 100%; aspect-ratio: auto;"><img src="../animalpics/e021f6df-cbe8-413d-9e8b-6d3a7a6f9359.jpg" alt="Shelter animal" style="width: 100%; height: auto; object-fit: cover; border-radius: var(--radius-lg);" loading="lazy"></div>
+          <div style="width: 100%; aspect-ratio: auto;"><img src="../animalpics/fa2bfb44-4f1f-4d7f-895f-97ef360a962d.jpg" alt="Shelter animal" style="width: 100%; height: auto; object-fit: cover; border-radius: var(--radius-lg);" loading="lazy"></div>
         </div>
       </div>
     </section>
@@ -129,9 +112,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <div class="footer-brand__logo">
-            <div class="footer-brand__icon">
-              <img src="../images/Friendsoflaportelogo.png" alt="" />
-            </div>
+            <div class="footer-brand__icon" aria-hidden="true">🐾</div>
             <span class="footer-brand__name">Friends of La Porte Animal Shelter</span>
           </div>
           <p class="footer-brand__desc">

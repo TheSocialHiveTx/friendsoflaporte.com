@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "serve": "^14.2.6"
+    "serve": "^14.2.6",
+    "tesseract.js": "^7.0.0"
   }
 }
