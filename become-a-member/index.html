@@ -346,11 +346,18 @@
               </div>
             </div>
 
-            <!-- Email -->
-            <div class="form-group">
-              <label class="form-label" for="f-email">Email Address <span aria-hidden="true">*</span></label>
-              <input class="form-control" type="email" id="f-email" name="email"
-                placeholder="jane@example.com" required autocomplete="email" aria-required="true" />
+            <!-- Phone + Email -->
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="f-phone">Phone Number <span aria-hidden="true">*</span></label>
+                <input class="form-control" type="tel" id="f-phone" name="phone"
+                  placeholder="(281) 555-0199" required autocomplete="tel" aria-required="true" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="f-email">Email Address <span aria-hidden="true">*</span></label>
+                <input class="form-control" type="email" id="f-email" name="email"
+                  placeholder="jane@example.com" required autocomplete="email" aria-required="true" />
+              </div>
             </div>
 
             <!-- Membership Tier -->
@@ -359,15 +366,15 @@
               <div style="display:flex;flex-direction:column;gap:.5rem;">
                 <label class="form-radio-label" style="display:flex;align-items:center;gap:.6rem;cursor:pointer;">
                   <input type="radio" name="membership_tier" value="standard_50" id="tier-radio-standard" required />
-                  <span><strong>$50 / year</strong> — Standard Membership</span>
+                  <span><strong>$50</strong> — Membership Fee</span>
                 </label>
                 <label class="form-radio-label" style="display:flex;align-items:center;gap:.6rem;cursor:pointer;">
                   <input type="radio" name="membership_tier" value="senior_25" id="tier-radio-senior" />
-                  <span><strong>$25 / year</strong> — Senior Citizen Membership (ages 65+)</span>
+                  <span><strong>$25</strong> — Senior Citizen Membership Fee (65 and up)</span>
                 </label>
                 <label class="form-radio-label" style="display:flex;align-items:center;gap:.6rem;cursor:pointer;">
                   <input type="radio" name="membership_tier" value="junior_15" id="tier-radio-junior" />
-                  <span><strong>$15 / year</strong> — Junior Membership (ages 1–17)</span>
+                  <span><strong>$15</strong> — Junior Membership Fee (1–17)</span>
                 </label>
               </div>
             </fieldset>
@@ -380,38 +387,37 @@
               </label>
             </div>
 
-            <!-- T-Shirt Size -->
-            <div class="form-group" style="margin-top:1rem;">
-              <label class="form-label" for="f-shirtsize">T-Shirt Size <span aria-hidden="true">*</span></label>
-              <select class="form-control" id="f-shirtsize" name="shirtsize" required aria-required="true">
-                <option value="" disabled selected>Select a size...</option>
-                <option value="Small">Small</option>
-                <option value="Medium">Medium</option>
-                <option value="Large">Large</option>
-                <option value="X-Large">X-Large</option>
-                <option value="XX-Large">XX-Large</option>
-              </select>
-            </div>
-
             <!-- Skills / Talents -->
-            <div class="form-group">
+            <div class="form-group" style="margin-top:1rem;">
               <label class="form-label" for="f-skills">
-                Skills or Talents You'd Like to Share with FLPAS
+                Do you have any skills/talents that you'd be willing to share with FLPAS?
                 <span style="color: var(--clr-muted); font-weight: 400;">(optional)</span>
               </label>
               <textarea class="form-control" id="f-skills" name="skills" rows="3"
-                placeholder="e.g. photography, social media, fundraising, carpentry, veterinary knowledge..."
+                placeholder="e.g. photography, social media, fundraising, carpentry, event help..."
               ></textarea>
             </div>
 
-            <!-- Parent / Guardian (shown when Junior is selected) -->
-            <div id="guardian-section" style="display:none; border-left: 3px solid var(--clr-accent); padding-left: 1rem; margin-top: .5rem;">
-              <p class="form-label" style="margin-bottom:.75rem;">Parent / Guardian (required for members under 18)</p>
+            <!-- Signature -->
+            <div class="form-group">
+              <label class="form-label" for="f-signature">Member Signature (Type Full Legal Name) <span aria-hidden="true">*</span></label>
+              <input class="form-control" type="text" id="f-signature" name="signature"
+                placeholder="Type your name to digitally sign" required aria-required="true" />
+            </div>
+
+            <!-- Parent / Guardian Section (shown when Junior is selected or for members < 18) -->
+            <div id="guardian-section" style="display:none; border-left: 3px solid var(--clr-accent); padding-left: 1rem; margin-top: 1rem; margin-bottom: 1rem; background: rgba(0,0,0,0.02); padding: 1rem; border-radius: var(--radius-sm);">
+              <p class="form-label" style="margin-bottom:.75rem; font-weight: 700; color: var(--clr-dark);">Name and Signature of Parent/Guardian (required for members under 18 years of age)</p>
               <div class="form-row">
                 <div class="form-group">
                   <label class="form-label" for="f-guardian-name">Parent / Guardian Name</label>
                   <input class="form-control" type="text" id="f-guardian-name" name="guardian_name"
                     placeholder="Parent or Guardian Full Name" autocomplete="name" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="f-guardian-signature">Parent / Guardian Signature</label>
+                  <input class="form-control" type="text" id="f-guardian-signature" name="guardian_signature"
+                    placeholder="Type name to digitally sign" />
                 </div>
               </div>
             </div>
@@ -423,16 +429,28 @@
               </button>
             </div>
 
-            <div class="form-mailto" style="margin-top:1.25rem; background: var(--clr-bg); border-radius: var(--radius-sm); padding: 1rem;">
-              <p style="font-weight: 600; color: var(--clr-dark); margin-bottom: .8rem;">💳 Payment Methods</p>
-              <p style="font-size: .85rem; color: var(--clr-muted); line-height: 1.6; margin-bottom: 1rem;">
-                Checks made out to <strong>FLPAS</strong> can be mailed to:<br />
-                FLPAS · 5230 Glenpark Dr. · La Porte, TX 77571
-              </p>
-              <div class="donate-modal__btns" style="gap: 10px;">
-                <a href="https://venmo.com/code?user_id=4575302663538176616&created=1776630187" target="_blank" rel="noopener noreferrer" class="donate-modal__btn donate-modal__btn--venmo" style="font-size: .9rem; padding: 0.5rem;">
-                  <svg style="width:16px;height:16px;fill:currentColor;" viewBox="0 0 24 24"><path d="M11.967 22.348c-3.23 0-5.748-1.574-7.555-4.72l-3.328-8.503c-.277-.663-.092-1.344.553-1.344h3.693c.368 0 .684.225.816.574l2.25 5.952c1.077 2.825 2.52 4.14 4.336 4.14 1.762 0 3.125-1.155 3.337-3.924.167-2.18-.396-4.59-1.92-6.52-.224-.28-.277-.552-.16-.83l.816-1.92c.118-.28.42-.45.74-.45h2.89c.35 0 .546.195.6.516.31 1.725.688 3.5.688 4.965 0 2.378-1.078 4.885-2.738 7.394-1.84 2.783-3.666 3.714-5.02 3.714z"/></svg> Venmo
+            <div class="form-mailto" style="margin-top:1.5rem; background: var(--clr-bg); border-radius: var(--radius-sm); padding: 1.25rem; border: 1px solid var(--clr-border);">
+              <p style="font-weight: 700; color: var(--clr-dark); margin-bottom: .6rem; font-size: 1rem;">💳 Payment Methods &amp; Instructions</p>
+              
+              <div style="font-size: .88rem; color: var(--clr-text); line-height: 1.6; margin-bottom: 1rem;">
+                <p style="margin-bottom: 0.5rem;">✉️ <strong>Checks made out to FLPAS can be mailed to:</strong><br />
+                FLPAS<br />
+                5230 Glenpark Dr.<br />
+                La Porte, TX 77571</p>
+
+                <p style="margin-bottom: 0.5rem;">📱 <strong>CashApp or Venmo payments:</strong><br />
+                Call or text <strong>281-515-5505</strong> for CashApp or Venmo details.</p>
+              </div>
+
+              <div class="donate-modal__btns" style="gap: 10px; margin-bottom: 1rem;">
+                <a href="https://venmo.com/code?user_id=4575302663538176616&created=1776630187" target="_blank" rel="noopener noreferrer" class="donate-modal__btn donate-modal__btn--venmo" style="font-size: .9rem; padding: 0.5rem 1rem;">
+                  <svg style="width:16px;height:16px;fill:currentColor;" viewBox="0 0 24 24"><path d="M11.967 22.348c-3.23 0-5.748-1.574-7.555-4.72l-3.328-8.503c-.277-.663-.092-1.344.553-1.344h3.693c.368 0 .684.225.816.574l2.25 5.952c1.077 2.825 2.52 4.14 4.336 4.14 1.762 0 3.125-1.155 3.337-3.924.167-2.18-.396-4.59-1.92-6.52-.224-.28-.277-.552-.16-.83l.816-1.92c.118-.28.42-.45.74-.45h2.89c.35 0 .546.195.6.516.31 1.725.688 3.5.688 4.965 0 2.378-1.078 4.885-2.738 7.394-1.84 2.783-3.666 3.714-5.02 3.714z"/></svg> Pay via Venmo
                 </a>
+              </div>
+
+              <div style="font-size: .85rem; color: var(--clr-muted); background: white; padding: 0.75rem; border-radius: var(--radius-sm); border-left: 3px solid var(--clr-primary);">
+                <strong>Prefer paper?</strong> You can also email your completed membership application page to <a href="mailto:donahoeson@gmail.com" style="color: var(--clr-primary); font-weight: 600;">donahoeson@gmail.com</a> or mail to:<br />
+                FLPAS · 1002 Woodbank Dr. · Seabrook, TX 77586
               </div>
             </div>
 

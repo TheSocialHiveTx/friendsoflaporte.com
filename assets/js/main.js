@@ -125,21 +125,24 @@
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const name    = document.getElementById('f-name')?.value.trim()  || '';
-    const dob     = document.getElementById('f-dob')?.value.trim()   || '';
-    const email   = document.getElementById('f-email')?.value.trim() || '';
-    const waiver  = document.getElementById('f-waiver')?.checked;
-    const skills  = document.getElementById('f-skills')?.value.trim() || '';
-    const guardian = document.getElementById('f-guardian-name')?.value.trim() || '';
+    const name      = document.getElementById('f-name')?.value.trim()      || '';
+    const dob       = document.getElementById('f-dob')?.value.trim()       || '';
+    const phone     = document.getElementById('f-phone')?.value.trim()     || '';
+    const email     = document.getElementById('f-email')?.value.trim()     || '';
+    const waiver    = document.getElementById('f-waiver')?.checked;
+    const skills    = document.getElementById('f-skills')?.value.trim()    || '';
+    const signature = document.getElementById('f-signature')?.value.trim() || '';
+    const guardian          = document.getElementById('f-guardian-name')?.value.trim()      || '';
+    const guardianSignature = document.getElementById('f-guardian-signature')?.value.trim() || '';
 
     /* Determine selected tier */
     const tierEl  = document.querySelector('input[name="membership_tier"]:checked');
-    const tierMap = { standard_50: '$50 Standard', senior_25: '$25 Senior (65+)', junior_15: '$15 Junior (1–17)' };
+    const tierMap = { standard_50: '$50 Membership Fee', senior_25: '$25 Senior Citizen Membership Fee (65+)', junior_15: '$15 Junior Membership Fee (1–17)' };
     const tier    = tierEl ? (tierMap[tierEl.value] || tierEl.value) : '';
 
     /* Basic validation */
-    if (!name || !email) {
-      alert('Please fill in your full name and email address.');
+    if (!name || !email || !phone) {
+      alert('Please fill in your full name, phone number, and email address.');
       return;
     }
     if (!tier) {
@@ -148,6 +151,10 @@
     }
     if (!waiver) {
       alert('Please agree to the FLPAS Liability Waiver to continue.');
+      return;
+    }
+    if (!signature) {
+      alert('Please enter your digital signature to submit the application.');
       return;
     }
 
